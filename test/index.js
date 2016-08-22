@@ -1,9 +1,9 @@
 /* global describe, it */
 var assert = require('assert');
-var pkg = require('../');
+var scrollTo = require('../');
 
 describe('scroll-to', function () {
-	it('should ...', function () {
-		assert(pkg);
+	it('exists', function () {
+		assert(scrollTo);
 	});
 });
