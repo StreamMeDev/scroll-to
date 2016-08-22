@@ -15,7 +15,7 @@ $ npm install --save @streammedev/scroll-to
 ```javascript
 var scrollTo = require('@streammedev/scroll-to');
 
-var onClickHandler = function () {
+function someEventHandler () {
 	scrollTo({
 		yCoord: 1000, // scroll the window to a y-coordinate of 1000px (default is 0)
 		duration: 500 // 500ms to complete the scrolling animation (default is 1000)
@@ -44,7 +44,7 @@ For each of these you can run a 'pre' version by prepending to the command, ex `
 All feature development should be done on a branch off `master`.  When a feature is complete and the pull request approved, publish a 'pre' version of the package for testing across environments.  To install that 'pre' version of the package do the following, where the verison number contains the correct 'pre' version:
 
 ```
-$ npm install --save @streamme/scroll-to@1.0.0-0
+$ npm install --save @streammedev/scroll-to@1.0.0-0
 ```
 
 Running the tests:
