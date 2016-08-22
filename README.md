@@ -7,15 +7,20 @@ Smoothly scroll a window position along the y-axis
 ## Install
 
 ```
-$ npm install --save @streamme/scroll-to
+$ npm install --save @streammedev/scroll-to
 ```
 
 ## Usage
 
 ```javascript
-var module = require('@streamme/scroll-to');
+var scrollTo = require('@streammedev/scroll-to');
 
-// ...
+var onClickHandler = function () {
+	scrollTo({
+		yCoord: 1000, // scroll the window to a y-coordinate of 1000px (default is 0)
+		duration: 500 // 500ms to complete the scrolling animation (default is 1000)
+	});
+}
 ```
 
 ## Development

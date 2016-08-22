@@ -1,5 +1,5 @@
 {
-  "name": "@streamme/scroll-to",
+  "name": "@streammedev/scroll-to",
   "version": "0.0.1",
   "description": "Smoothly scroll a window position along the y-axis",
   "main": "index.js",
@@ -7,13 +7,10 @@
     "scroll window y-axis animation transient"
   ],
   "author": "StreamMe",
-  "license": "UNLICENSED",
+  "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "ssh://git@git.vubeology.com/npm/scroll-to.git"
-  },
-  "publishConfig": {
-    "registry": "http://npm-onsite-internal.stream.me:8080"
+	"url": "git@github.com:StreamMeDev/scroll-to"
   },
   "scripts": {
     "test": "happiness && mocha --grep 'BROWSER: ' --invert",
@@ -26,6 +23,6 @@
     "mochify": "^2.18.1"
   },
   "dependencies": {
-    "transient": "^1.2.0"
+    "transient": "^1.3.0"
   }
 }
