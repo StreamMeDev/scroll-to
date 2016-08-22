@@ -18,7 +18,7 @@ var scrollTo = require('@streammedev/scroll-to');
 function someEventHandler () {
 	scrollTo({
 		yCoord: 1000, // scroll the window to a y-coordinate of 1000px (default is 0)
-		duration: 500 // 500ms to complete the scrolling animation (default is 1000)
+		duration: 500 // 500ms to complete the scrolling animation (default is 150)
 	});
 }
 ```

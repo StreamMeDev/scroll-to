@@ -1,6 +1,6 @@
 {
   "name": "@streammedev/scroll-to",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Smoothly scroll a window position along the y-axis",
   "main": "index.js",
   "keywords": [

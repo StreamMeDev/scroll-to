@@ -2,17 +2,18 @@ var Transient = require('transient');
 
 module.exports = function (options) {
 	// do nothing if not running in the browser
-	if (typeof window === 'undefined' || !window.scroll()) {
+	if (typeof window === 'undefined' || !window.scroll) {
 		return;
 	}
 
 	options = options || {};
-	options.yCoord || 0; // default to scrolling to top of page
+	options.duration = options.duration || 150; // 150 ms
+	options.yCoord = options.yCoord || 0; // default to scrolling to very top of page
 
 	var startPosition = window.scrollY;
 
 	var a = new Transient({
-		duration: options.duration || 1000, // 1 second
+		duration: options.duration,
 		draw: function (progress) {
 			/*
 				scrolling down from 0px (top of page) to 1000px?
@@ -25,14 +26,14 @@ module.exports = function (options) {
 				When progress is .50 newScrollPosition is 500px
 				When progress is .75 newScrollPosition is 250px
 
-				scrollDistance can be negative when scrolling up:
-				newScrollPosition = (scrollDistance * progress) + startPosition
-				scrollDistance = targetPosition - startPosition;
+				totalScrollChange can be negative when scrolling up:
+				newScrollPosition = (totalScrollChange * progress) + startPosition
+				totalScrollChange = targetPosition - startPosition;
 
-				newScrollPosition = (targetPosition - startPosition) * progress + startPosition
-				newScrollPosition = targetPosition - startPosition + (startPosition / progress)
+				startPosition + totalScrollChange * progress
+				newScrollPosition = startPosition + ((targetPosition - startPosition) * progress)
 			*/
-			window.scroll(0, options.yCoord - startPosition + (startPosition / progress));
+			window.scroll(0, startPosition + (options.yCoord - startPosition) * progress);
 		}
 	});
 
