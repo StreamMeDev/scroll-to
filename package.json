@@ -14,6 +14,7 @@
   },
   "scripts": {
     "test": "happiness && mocha --grep 'BROWSER: ' --invert",
+	"mochify": "mochify",
     "prepublish": "npm test",
     "test-browser": "mochify"
   },

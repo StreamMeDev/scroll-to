@@ -8,7 +8,7 @@ module.exports = function (options) {
 
 	options = options || {};
 	options.duration = options.duration || 150; // 150 ms
-	options.yCoord = options.yCoord || 0; // default to scrolling to very top of page
+	options.y = options.y || 0; // default to scrolling to very top of page
 
 	var startPosition = window.scrollY;
 
@@ -33,7 +33,12 @@ module.exports = function (options) {
 				startPosition + totalScrollChange * progress
 				newScrollPosition = startPosition + ((targetPosition - startPosition) * progress)
 			*/
-			window.scroll(0, startPosition + (options.yCoord - startPosition) * progress);
+			window.scroll(0, startPosition + (options.y - startPosition) * progress);
+		},
+		// Since Transient updates progress before calling draw(), then calls onEnd if progress >= 1,
+		// it may not call draw() with 100% progress. Here we finish the scrolling onEnd.
+		onEnd: function () {
+			window.scroll(0, options.y);
 		}
 	});
 
