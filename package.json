@@ -4,7 +4,11 @@
   "description": "Smoothly scroll a window position along the y-axis",
   "main": "index.js",
   "keywords": [
-    "scroll window y-axis animation transient"
+    "scroll",
+    "window",
+    "y-axis",
+    "animation",
+    "transient"
   ],
   "author": "StreamMe",
   "license": "ISC",

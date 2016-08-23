@@ -19,7 +19,7 @@ module.exports = function (options) {
 		draw: function (progress) {
 			/*
 				scrolling down from 0px (top of page) to 1000px?
-				When progress is 0, newScrollPosition is unchagnged: 0px;
+				When progress is 0, newScrollPosition is unchanged: 0px;
 				When progress is .50, newScrollPosition is 1500px;
 				When progress is .75, newScrollPosition is 1750px;
 
