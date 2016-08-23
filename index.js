@@ -8,9 +8,11 @@ module.exports = function (options) {
 
 	options = options || {};
 	options.duration = options.duration || 150; // 150 ms
+	options.x = options.x || 0; // default to scrolling to lefthand side of the page
 	options.y = options.y || 0; // default to scrolling to very top of page
 
-	var startPosition = window.scrollY;
+	var xStartPosition = window.scrollX;
+	var yStartPosition = window.scrollY;
 
 	var a = new Transient({
 		duration: options.duration,
@@ -27,18 +29,18 @@ module.exports = function (options) {
 				When progress is .75 newScrollPosition is 250px
 
 				totalScrollChange can be negative when scrolling up:
-				newScrollPosition = (totalScrollChange * progress) + startPosition
-				totalScrollChange = targetPosition - startPosition;
+				newScrollPosition = (totalScrollChange * progress) + yStartPosition
+				totalScrollChange = targetPosition - yStartPosition;
 
-				startPosition + totalScrollChange * progress
-				newScrollPosition = startPosition + ((targetPosition - startPosition) * progress)
+				yStartPosition + totalScrollChange * progress
+				newScrollPosition = yStartPosition + ((targetPosition - yStartPosition) * progress)
 			*/
-			window.scroll(0, startPosition + (options.y - startPosition) * progress);
+			window.scroll(xStartPosition + (options.x - xStartPosition) * progress, yStartPosition + (options.y - yStartPosition) * progress);
 		},
 		// Since Transient updates progress before calling draw(), then calls onEnd if progress >= 1,
 		// it may not call draw() with 100% progress. Here we finish the scrolling onEnd.
 		onEnd: function () {
-			window.scroll(0, options.y);
+			window.scroll(options.x, options.y);
 		}
 	});
 
