@@ -13,14 +13,11 @@
 	"url": "git@github.com:StreamMeDev/scroll-to"
   },
   "scripts": {
-    "test": "happiness && mocha --grep 'BROWSER: ' --invert",
-	"mochify": "mochify",
-    "prepublish": "npm test",
-    "test-browser": "mochify"
+    "test": "happiness && mochify",
+    "prepublish": "npm test"
   },
   "devDependencies": {
     "happiness": "^7.1.2",
-    "mocha": "^3.0.2",
     "mochify": "^2.18.1"
   },
   "dependencies": {
