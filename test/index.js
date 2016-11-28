@@ -48,4 +48,24 @@ describe('scroll-to', function () {
 			done();
 		}, 175);
 	});
+
+	it('should stop an animation correctly', function (done) {
+		var stop = scrollTo({
+			x: 1000,
+			y: 1000,
+			duration: 150
+		});
+
+		setTimeout(function () {
+			stop();
+		}, 75);
+		// Check that it preemptively ended the animation
+		setTimeout(function () {
+			assert(window.scrollX < 700);
+			assert(window.scrollY < 700);
+			assert(window.scrollX > 300);
+			assert(window.scrollY > 300);
+			done();
+		}, 100);
+	});
 });

@@ -23,6 +23,11 @@ function someEventHandler () {
 		duration: 500 // 500ms to complete the scrolling animation (default is 150)
 	});
 }
+
+// cancel an in progress animation
+var stop = scrollTo();
+// Will stop wherever it is in the process of the animation
+stop();
 ```
 
 ## Development
