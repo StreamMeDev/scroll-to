@@ -1,5 +1,7 @@
-# scroll-to
+# Scroll To
 
+[![NPM Version](https://img.shields.io/npm/v/@streammedev/scroll-to.svg)](https://npmjs.org/package/@streammedev/scroll-to)
+[![NPM Downloads](https://img.shields.io/npm/dm/@streammedev/scroll-to.svg)](https://npmjs.org/package/@streammedev/scroll-to)
 [![Build Status](https://travis-ci.org/StreamMeDev/scroll-to.svg?branch=master)](https://travis-ci.org/StreamMeDev/scroll-to)
 [![js-happiness-style](https://img.shields.io/badge/code%20style-happiness-brightgreen.svg)](https://github.com/JedWatson/happiness)
 
@@ -24,6 +26,11 @@ function someEventHandler () {
 		duration: 500 // 500ms to complete the scrolling animation (default is 150)
 	});
 }
+
+// cancel an in progress animation
+var stop = scrollTo();
+// Will stop wherever it is in the process of the animation
+stop();
 ```
 
 ## Development
