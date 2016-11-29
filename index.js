@@ -37,6 +37,9 @@ module.exports = function (options) {
 			*/
 			window.scroll(xStartPosition + (options.x - xStartPosition) * progress, yStartPosition + (options.y - yStartPosition) * progress);
 		},
+		onCancel: function () {
+			// Do nothing, this just overrides the behavior of transient which is to call onEnd
+		},
 		// Since Transient updates progress before calling draw(), then calls onEnd if progress >= 1,
 		// it may not call draw() with 100% progress. Here we finish the scrolling onEnd.
 		onEnd: function () {
@@ -45,4 +48,8 @@ module.exports = function (options) {
 	});
 
 	a.start();
+
+	return function () {
+		a.cancel();
+	};
 };
