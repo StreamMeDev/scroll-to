@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/StreamMeDev/scroll-to.svg?branch=master)](https://travis-ci.org/StreamMeDev/scroll-to)
 [![js-happiness-style](https://img.shields.io/badge/code%20style-happiness-brightgreen.svg)](https://github.com/JedWatson/happiness)
 
-Smoothly scroll a window position along the y-axis
+Smoothly transition any element's scroll position along either axis.
 
 ## Install
 
@@ -20,6 +20,7 @@ var scrollTo = require('@streammedev/scroll-to');
 
 function someEventHandler () {
 	scrollTo({
+		element: window, // The element to scroll (default is window)
 		y: 1000, // scroll the window to a y-coordinate of 1000px (default is 0)
 		x: 1000, // scroll the window to a x-coordinate of 1000px (default is 0)
 		duration: 500 // 500ms to complete the scrolling animation (default is 150)
